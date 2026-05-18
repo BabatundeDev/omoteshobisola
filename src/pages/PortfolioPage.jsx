@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp } from 'lucide-react';
 
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import Project1 from '/src/assets/images/project1.png';
-import Project2 from '/src/assets/images/project2.jpeg';
-import Project3 from '/src/assets/images/project3.jpg';
-import Project4 from '/src/assets/images/project4.png';
-
+import Project1 from '../assets/images/project1.png';
+import Project2 from '../assets/images/project2.jpeg';
+import Project3 from '../assets/images/project3.jpg';
+import Project4 from '../assets/images/project4.png';
 // ─── Scroll Reveal Hook ───────────────────────────────────────────────
 function useScrollReveal(options = {}) {
   const ref = useRef(null);
