@@ -33,11 +33,11 @@ function Reveal({ children, delay = 0, direction = 'up', className = '' }) {
   const [ref, isVisible] = useScrollReveal();
 
   const directionMap = {
-    up:    'translateY(40px)',
-    down:  'translateY(-40px)',
-    left:  'translateX(50px)',
+    up: 'translateY(40px)',
+    down: 'translateY(-40px)',
+    left: 'translateX(50px)',
     right: 'translateX(-50px)',
-    fade:  'translateY(0px)',
+    fade: 'translateY(0px)',
   };
 
   return (
@@ -89,10 +89,9 @@ export function ContactPage() {
   };
 
   const inputClass = (name) =>
-    `w-full bg-input-background border px-4 py-3 text-foreground focus:outline-none resize-none transition-all duration-300 ${
-      focusedField === name
-        ? 'border-primary shadow-[0_0_0_2px_rgba(var(--primary-rgb),0.15)]'
-        : 'border-primary/20 hover:border-primary/40'
+    `w-full bg-input-background border px-4 py-3 text-foreground focus:outline-none resize-none transition-all duration-300 ${focusedField === name
+      ? 'border-primary shadow-[0_0_0_2px_rgba(var(--primary-rgb),0.15)]'
+      : 'border-primary/20 hover:border-primary/40'
     }`;
 
   return (
@@ -131,78 +130,84 @@ export function ContactPage() {
               transition-shadow duration-300
               hover:shadow-[0_0_40px_rgba(var(--primary-rgb),0.08)]">
 
-                <h2 className="text-3xl mb-8">Send Us a Message</h2>
+                <h2 className="text-3xl mb-8">Send a Message</h2>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  action="https://api.web3forms.com/submit"
+                  method="POST"
+                  className="space-y-6"
+                >
+
+                  {/* Web3Forms Access Key */}
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value="45bfee07-5cd9-43d0-9f44-940a9cc0cd16"
+                  />
+
+                  {/* Subject */}
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value="New Portfolio Contact Submission"
+                  />
+
+                  {/* Disable Captcha */}
+                  <input
+                    type="hidden"
+                    name="botcheck"
+                    className="hidden"
+                  />
 
                   {/* Name */}
                   <div>
-                    <label htmlFor="name" className="block text-sm mb-2 text-foreground">
+                    <label className="block text-sm mb-2">
                       Full Name
                     </label>
+
                     <input
                       type="text"
-                      id="name"
                       name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      onFocus={() => setFocusedField('name')}
-                      onBlur={() => setFocusedField(null)}
                       required
                       className={inputClass('name')}
-                      placeholder="John Doe"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-sm mb-2 text-foreground">
+                    <label className="block text-sm mb-2">
                       Email Address
                     </label>
+
                     <input
                       type="email"
-                      id="email"
                       name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      onFocus={() => setFocusedField('email')}
-                      onBlur={() => setFocusedField(null)}
                       required
                       className={inputClass('email')}
-                      placeholder="john@company.com"
                     />
                   </div>
 
                   {/* Company */}
                   <div>
-                    <label htmlFor="company" className="block text-sm mb-2 text-foreground">
+                    <label className="block text-sm mb-2">
                       Company Name
                     </label>
+
                     <input
                       type="text"
-                      id="company"
                       name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      onFocus={() => setFocusedField('company')}
-                      onBlur={() => setFocusedField(null)}
                       className={inputClass('company')}
-                      placeholder="Your Company"
                     />
                   </div>
 
                   {/* Service */}
                   <div>
-                    <label htmlFor="service" className="block text-sm mb-2 text-foreground">
+                    <label className="block text-sm mb-2">
                       Service Interest
                     </label>
+
                     <select
-                      id="service"
                       name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      onFocus={() => setFocusedField('service')}
-                      onBlur={() => setFocusedField(null)}
                       required
                       className={inputClass('service')}
                     >
@@ -217,36 +222,29 @@ export function ContactPage() {
 
                   {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-sm mb-2 text-foreground">
+                    <label className="block text-sm mb-2">
                       Message
                     </label>
+
                     <textarea
-                      id="message"
                       name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      onFocus={() => setFocusedField('message')}
-                      onBlur={() => setFocusedField(null)}
-                      required
                       rows={6}
+                      required
                       className={inputClass('message')}
-                      placeholder="Tell us about your business and goals..."
+                      placeholder="Tell us about your business goals..."
                     />
                   </div>
 
+                  {/* Submit Button */}
                   <button
                     type="submit"
                     className="w-full bg-primary text-black px-6 py-4
-                    inline-flex items-center justify-center gap-2
-                    transition-all duration-300
-                    hover:bg-primary/90 hover:gap-3 active:scale-[0.98]
-                    hover:shadow-[0_4px_20px_rgba(var(--primary-rgb),0.35)]"
+    inline-flex items-center justify-center gap-2
+    cursor-pointer
+    transition-all duration-300
+    hover:bg-primary/90 hover:gap-3 active:scale-[0.98]"
                   >
-                    <Send
-                      size={20}
-                      className={`transition-transform duration-300 ${submitted ? 'translate-x-1 -translate-y-1' : ''}`}
-                    />
-                    {submitted ? 'Message Sent!' : 'Send Message'}
+                    Send Message
                   </button>
 
                 </form>
@@ -280,12 +278,12 @@ export function ContactPage() {
                     <div>
                       <h3 className="text-xl mb-2">Email</h3>
                       <a
-                        href="mailto:hello@abiconnect.digital"
+                        href="mailto:omoteshobisola08@gmail.com"
                         className="text-muted-foreground hover:text-primary transition-colors duration-300
                         relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0
                         after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
                       >
-                        hello@abiconnect.digital
+                        omoteshobisola08@gmail.com
                       </a>
                     </div>
                   </div>

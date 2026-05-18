@@ -8,11 +8,11 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <span className="text-2xl font-serif text-primary">AbiConnect</span>
-              <span className="text-2xl font-serif text-foreground">Digital</span>
+              <span className="text-2xl font-serif text-primary">Omotesho</span>
+              <span className="text-2xl font-serif text-foreground">Bisola</span>
             </div>
             <p className="text-muted-foreground max-w-md leading-relaxed">
-              Strategy-led digital marketing for education-focused brands and growth-driven businesses in Nigeria.
+              Strategy-led digital marketing for pesonal brand and businesses
             </p>
           </div>
 
@@ -49,8 +49,13 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="text-muted-foreground">Ife, Osun state, Nigeria</li>
               <li>
-                <a href="mailto:hello@abiconnect.digital" className="text-muted-foreground hover:text-primary transition-colors">
-                  hello@abiconnect.digital
+                <a
+                  href="mailto:omoteshobisola08@gmail.com"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300
+                        relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0
+                        after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  omoteshobisola08@gmail.com
                 </a>
               </li>
             </ul>
@@ -59,7 +64,7 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-primary/10">
           <p className="text-muted-foreground text-center text-sm">
-            © {new Date().getFullYear()} AbiConnect Digital. All rights reserved.
+            © {new Date().getFullYear()} Omotesho Bisola. All rights reserved.
           </p>
         </div>
       </div>

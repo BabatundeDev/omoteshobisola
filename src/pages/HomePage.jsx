@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Target, TrendingUp, Users } from 'lucide-react';
 
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import Image3 from '/src/assets/images/image3.jpg';
-import Image4 from '/src/assets/images/image4.jpg';
-
+import Omotesho from '/src/assets/images/omotesho.png';
+import Bisola from '/src/assets/images/Bisola.jpeg';
 // ─── Scroll Reveal Hook ───────────────────────────────────────────────────────
 function useScrollReveal(options = {}) {
   const ref = useRef(null);
@@ -38,11 +37,11 @@ function Reveal({ children, delay = 0, direction = 'up', className = '' }) {
   const [ref, isVisible] = useScrollReveal();
 
   const directionMap = {
-    up:    'translateY(40px)',
-    down:  'translateY(-40px)',
-    left:  'translateX(50px)',
+    up: 'translateY(40px)',
+    down: 'translateY(-40px)',
+    left: 'translateX(50px)',
     right: 'translateX(-50px)',
-    fade:  'translateY(0px)',
+    fade: 'translateY(0px)',
   };
 
   return (
@@ -66,70 +65,80 @@ export function HomePage() {
     <div className="min-h-screen">
 
       {/* ── Hero ── */}
-      <section className="pt-32 pb-20 px-6 lg:px-8">
+      <section className="pt-10 pb-20 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
 
             {/* Text */}
-            <div className="space-y-8">
+            <div className="space-y-6 pt-20">
               <Reveal direction="up" delay={0}>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-tight">
-                  Strategy-Led Digital Marketing for
-                  <span className="text-primary"> Growth-Driven</span> Businesses
+                <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight">
+                  Social Media Growth & Customer
+                  <span className="text-primary"> Acquisition</span> Specialist
                 </h1>
               </Reveal>
 
               <Reveal direction="up" delay={150}>
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                  We help education-focused brands and ambitious businesses in Nigeria achieve
-                  sustainable growth through data-driven digital marketing strategies.
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
+                  I help brands grow visibility, attract customers, and convert attention into revenue.
                 </p>
               </Reveal>
 
               <Reveal direction="up" delay={250}>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    to="/contact"
+
+                  <a
+                    href="https://calendly.com/omoteshobisola08/new-meeting"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-primary text-black px-8 py-4 text-center
-                    hover:bg-primary/90 transition-all duration-300 ease-out
-                    inline-flex items-center justify-center gap-2
-                    hover:gap-3 hover:shadow-[0_4px_20px_rgba(var(--primary-rgb),0.35)]"
+              hover:bg-primary/90 transition-all duration-300 ease-out
+              inline-flex items-center justify-center gap-2"
                   >
                     Book a Strategy Call
                     <ArrowRight size={20} />
-                  </Link>
+                  </a>
 
-                  <Link
-                    to="/services"
+                  <a
+                    href="https://wa.me/+2348024660463"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="border border-primary text-primary px-8 py-4 text-center
-                    hover:bg-primary/10 transition-all duration-300 ease-out"
+              hover:bg-primary/10 transition-all duration-300 ease-out
+              inline-flex items-center justify-center gap-2"
                   >
-                    Our Services
-                  </Link>
+                    Chat on WhatsApp
+                  </a>
+
                 </div>
               </Reveal>
             </div>
 
             {/* Image */}
             <Reveal direction="left" delay={200}>
-              <div className="relative">
-                <div className="aspect-[4/5] bg-secondary border border-primary/20 overflow-hidden">
+              <div className="relative flex justify-center lg:justify-end">
+
+                <div className="relative w-full max-w-md">
+
                   <ImageWithFallback
-                    src={Image3}
+                    src={Omotesho}
                     alt="Digital Marketing Strategy"
-                    className="w-full h-full object-cover
-                    transition-transform duration-500 ease-out hover:scale-105"
+                    className="w-full h-auto object-cover"
                   />
+
+                  <div className="absolute bottom-4 left-4 bg-primary text-black p-5">
+                    <p className="text-2xl font-serif mb-1">98%</p>
+                    <p className="text-sm">Client satisfaction rate</p>
+                  </div>
+
                 </div>
-                <div className="absolute -bottom-8 -left-8 bg-primary text-black p-8 max-w-xs
-                transition-all duration-300 ease-out hover:scale-105">
-                  <p className="text-3xl font-serif mb-2">98%</p>
-                  <p className="text-sm">Client satisfaction rate</p>
-                </div>
+
               </div>
             </Reveal>
 
           </div>
+
         </div>
       </section>
 
@@ -200,7 +209,7 @@ export function HomePage() {
             <div>
               <Reveal direction="up" delay={0}>
                 <h2 className="text-4xl md:text-5xl mb-8">
-                  Why <span className="text-primary">AbiConnect</span> Digital?
+                  Why <span className="text-primary">Omotesho</span> Bisola?
                 </h2>
               </Reveal>
 
@@ -241,7 +250,7 @@ export function HomePage() {
             <Reveal direction="left" delay={200}>
               <div className="aspect-[4/3] bg-secondary border border-primary/20 overflow-hidden">
                 <ImageWithFallback
-                  src={Image4}
+                  src={Bisola}
                   alt="Professional Team"
                   className="w-full h-full object-cover
                   transition-transform duration-500 ease-out hover:scale-105"
@@ -260,7 +269,7 @@ export function HomePage() {
           <Reveal direction="up" delay={0}>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl mb-6">
-                Our <span className="text-primary">Approach</span>
+                My <span className="text-primary">Approach</span>
               </h2>
             </div>
           </Reveal>
@@ -297,16 +306,17 @@ export function HomePage() {
           </Reveal>
 
           <Reveal direction="up" delay={150}>
-            <Link
-              to="/contact"
-              className="bg-primary text-black px-10 py-4 text-lg
+            <a
+                    href="https://calendly.com/omoteshobisola08/new-meeting"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-primary text-black px-8 py-4 text-center
               hover:bg-primary/90 transition-all duration-300 ease-out
-              inline-flex items-center gap-2
-              hover:gap-3 hover:shadow-[0_4px_20px_rgba(var(--primary-rgb),0.35)]"
-            >
-              Book a Strategy Call
-              <ArrowRight size={20} />
-            </Link>
+              inline-flex items-center justify-center gap-2"
+                  >
+                    Book a Strategy Call
+                    <ArrowRight size={20} />
+                  </a>
           </Reveal>
         </div>
       </section>

@@ -34,11 +34,11 @@ function Reveal({ children, delay = 0, direction = 'up', className = '' }) {
   const [ref, isVisible] = useScrollReveal();
 
   const directionMap = {
-    up:    'translateY(40px)',
-    down:  'translateY(-40px)',
-    left:  'translateX(50px)',
+    up: 'translateY(40px)',
+    down: 'translateY(-40px)',
+    left: 'translateX(50px)',
     right: 'translateX(-50px)',
-    fade:  'translateY(0px)',
+    fade: 'translateY(0px)',
   };
 
   return (
@@ -130,7 +130,7 @@ export function ServicesPage() {
 
             <Reveal direction="up" delay={150}>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                We deliver comprehensive digital marketing solutions designed to drive real business outcomes.
+                I deliver comprehensive digital marketing solutions designed to drive real business outcomes.
               </p>
             </Reveal>
 
@@ -233,7 +233,7 @@ export function ServicesPage() {
           <Reveal direction="up" delay={0}>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl mb-6">
-                How We <span className="text-primary">Deliver</span>
+                What I <span className="text-primary">Deliver</span>
               </h2>
             </div>
           </Reveal>
@@ -279,16 +279,17 @@ export function ServicesPage() {
           </Reveal>
 
           <Reveal direction="up" delay={250}>
-            <Link
-              to="/contact"
-              className="bg-primary text-black px-10 py-4 text-lg
+            <a
+              href="https://calendly.com/omoteshobisola08/new-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary text-black px-8 py-4 text-center
               hover:bg-primary/90 transition-all duration-300 ease-out
-              inline-flex items-center gap-2
-              hover:gap-3 hover:shadow-[0_4px_20px_rgba(var(--primary-rgb),0.35)]"
+              inline-flex items-center justify-center gap-2"
             >
-              Book a Consultation
+              Book a Strategy Call
               <ArrowRight size={20} />
-            </Link>
+            </a>
           </Reveal>
 
         </div>

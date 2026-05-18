@@ -22,8 +22,8 @@ export function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-serif text-primary">AbiConnect</span>
-            <span className="text-2xl font-serif text-foreground">Digital</span>
+            <span className="text-2xl font-serif text-primary">Omotesho</span>
+            <span className="text-2xl font-serif text-foreground">Bisola</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,12 +45,13 @@ export function Navigation() {
 
           {/* CTA Button Desktop */}
           <div className="hidden md:block">
-            <Link
-              to="/contact"
+            <a href="https://calendly.com/omoteshobisola08/new-meeting"
+                    target="_blank"
+                    rel="noopener noreferrer"
               className="bg-primary text-black px-6 py-3 text-sm tracking-wide hover:bg-primary/90 transition-all"
             >
               Book a Call
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}

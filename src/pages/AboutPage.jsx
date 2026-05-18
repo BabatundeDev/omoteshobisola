@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Award, Target, Users2, ArrowRight } from 'lucide-react';
 
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import Image2 from '/src/assets/images/image2.jpg';
+import Bisola from '/src/assets/images/Bisola.jpeg';
 
 // ─── Scroll Reveal Hook ───────────────────────────────────────────────────────
 function useScrollReveal(options = {}) {
@@ -37,11 +37,11 @@ function Reveal({ children, delay = 0, direction = 'up', className = '' }) {
   const [ref, isVisible] = useScrollReveal();
 
   const directionMap = {
-    up:    'translateY(40px)',
-    down:  'translateY(-40px)',
-    left:  'translateX(50px)',
+    up: 'translateY(40px)',
+    down: 'translateY(-40px)',
+    left: 'translateX(50px)',
     right: 'translateX(-50px)',
-    fade:  'translateY(0px)',
+    fade: 'translateY(0px)',
   };
 
   return (
@@ -70,16 +70,14 @@ export function AboutPage() {
           <div className="max-w-4xl">
 
             <Reveal direction="up" delay={0}>
-              <h1 className="text-5xl md:text-6xl mb-8">
+              <h1 className="text-4xl md:text-5xl mb-8">
                 Building <span className="text-primary">Digital Success</span> Through Strategy and Systems
               </h1>
             </Reveal>
 
             <Reveal direction="up" delay={150}>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                AbiConnect Digital is a strategy-led digital marketing agency based in Nigeria, serving
-                education-focused brands and growth-driven businesses across real estate, serviced
-                apartments, and beyond.
+              <p className="text-l text-muted-foreground leading-relaxed">
+                I’m a Social Media Growth & Customer Acquisition Specialist focused on helping brands grow visibility, attract customers, and build stronger digital presence through strategic content and marketing systems.
               </p>
             </Reveal>
 
@@ -96,7 +94,7 @@ export function AboutPage() {
             <Reveal direction="right" delay={0}>
               <div className="aspect-[4/3] bg-black border border-primary/20 overflow-hidden">
                 <ImageWithFallback
-                  src={Image2}
+                  src={Bisola}
                   alt="Our Team"
                   className="w-full h-full object-cover
                   transition-transform duration-500 ease-out hover:scale-105"
@@ -107,30 +105,25 @@ export function AboutPage() {
             {/* Text */}
             <div className="space-y-6">
               <Reveal direction="left" delay={0}>
-                <h2 className="text-4xl mb-6">Our Story</h2>
+                <h2 className="text-2xl mb-6">My Story</h2>
               </Reveal>
 
               <Reveal direction="left" delay={100}>
                 <p className="text-muted-foreground leading-relaxed">
-                  Founded on the belief that effective digital marketing goes beyond viral posts and
-                  trending content, AbiConnect Digital was built to serve businesses that value
-                  substance over hype.
+                  My journey into digital marketing started after experiencing the challenges many businesses face posting consistently, running ads, and still struggling to generate sales. That experience pushed me to study audience psychology, content strategy, and customer acquisition deeply.
                 </p>
               </Reveal>
 
-              <Reveal direction="left" delay={200}>
-                <p className="text-muted-foreground leading-relaxed">
-                  We combine deep expertise in digital marketing, education management, and project
-                  management to deliver strategic solutions that create lasting impact.
-                </p>
+              <Reveal direction="left" delay={0}>
+                <h2 className="text-2xl mb-6">My Mission</h2>
               </Reveal>
 
-              <Reveal direction="left" delay={300}>
+              <Reveal direction="left" delay={100}>
                 <p className="text-muted-foreground leading-relaxed">
-                  We're not just a service provider. We're your strategic partner in building a
-                  scalable, profitable digital presence.
+                  My goal is to help businesses stop relying on random posting and start building intentional growth systems that drive real results.
                 </p>
               </Reveal>
+              
             </div>
 
           </div>
@@ -144,10 +137,10 @@ export function AboutPage() {
           <Reveal direction="up" delay={0}>
             <div className="max-w-3xl mb-16">
               <h2 className="text-4xl md:text-5xl mb-6">
-                What <span className="text-primary">Drives Us</span>
+                What <span className="text-primary">Drives Me</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Our philosophy is built on principles that guide every strategy, campaign, and
+                My philosophy is built on principles that guide every strategy, campaign, and
                 client relationship.
               </p>
             </div>
@@ -158,17 +151,17 @@ export function AboutPage() {
               {
                 icon: Target,
                 title: 'Strategy First',
-                description: 'We believe great results come from great strategy.',
+                description: 'I believe great results come from great strategy.',
               },
               {
                 icon: Award,
                 title: 'Results-Oriented',
-                description: 'We measure success by business outcomes, not vanity metrics.',
+                description: 'I measure success by business outcomes, not vanity metrics.',
               },
               {
                 icon: Users2,
                 title: 'Partnership Mindset',
-                description: 'We build relationships based on trust and long-term growth.',
+                description: 'I build relationships based on trust and long-term growth.',
               },
             ].map((card, index) => (
               <Reveal key={index} direction="up" delay={index * 150}>
@@ -193,7 +186,7 @@ export function AboutPage() {
           <Reveal direction="up" delay={0}>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl mb-6">
-                <span className="text-primary">Expertise</span> That Matters
+                <span className="text-primary">My</span> Specialization
               </h2>
             </div>
           </Reveal>
@@ -205,16 +198,28 @@ export function AboutPage() {
                 description: 'Strategic, data-driven execution tailored to real business outcomes.',
               },
               {
-                title: 'Education Management',
-                description: 'Strategic, data-driven execution tailored to real business outcomes.',
+                title: 'Content marketing',
+                description: 'Content marketing that drives visibility, engagement, and consistent audience attention',
               },
               {
-                title: 'Project Management',
-                description: 'Strategic, data-driven execution tailored to real business outcomes.',
+                title: 'Growth strategy',
+                description: 'Growth strategy focused on scalable acquisition and long term brand expansion',
               },
               {
-                title: 'Systems Thinking',
-                description: 'Strategic, data-driven execution tailored to real business outcomes.',
+                title: 'Audience building',
+                description: 'Audience building systems designed to attract and retain qualified communities',
+              },
+              {
+                title: 'Brand positioning',
+                description: 'Brand positioning that strengthens market perception and competitive differentiation',
+              },
+              {
+                title: 'Customer acquisition',
+                description: 'Customer acquisition frameworks that convert attention into measurable revenue',
+              },
+              {
+                title: 'Social media systems',
+                description: 'Social media systems engineered for automation, consistency, and performance tracking',
               },
             ].map((item, index) => (
               <Reveal key={index} direction="up" delay={index * 120}>
@@ -244,7 +249,7 @@ export function AboutPage() {
 
           <Reveal direction="up" delay={150}>
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-              Ready to partner with an agency that prioritizes your business growth?
+              Ready to grow your brand online? Let’s discuss how strategy, content, and customer acquisition can help your business scale.
             </p>
           </Reveal>
 
